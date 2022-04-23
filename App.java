@@ -1,6 +1,4 @@
-
-		
-		package xacxsdas;
+package xacxsdas;
 
 		import java.util.ArrayList;
 		import java.util.Scanner;
