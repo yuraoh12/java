@@ -24,8 +24,21 @@ public class javatext1 {
 		System.out.println(p2.name);
 		System.out.println(p2.home);
 		
-
-
+		//객체 생성(선언)
+		
+		Person p3 = new Person();
+		p3.setData(30, "이순신", "청주");
+		//초기화 (필수)
+		
+		System.out.println(p3.name);
+		
+		person p4 = new person();
+		p4.setData(20, "황진이", "춘천");
+		
+		System.out.println(p4.name);
+		
+		new Person();
+		
 	}
 
 		
@@ -34,8 +47,24 @@ public class javatext1 {
 
 class person {
 	static int age; //static은 원본에 적는 것 / static이 붙지 않은 것 => 복사본에 적는 것 
-	static String name;
-	static String home;
+	 String name;
+	 String home;
+	 
+	 
+	 //1.리턴타입 x
+	 //2.반드시 클래스명과 동일해야함. 
+	 //3.객체가 생성될때 반드시 실행되는 매서드 -> 생성자 
+	 
+	 public person() {
+			System.out.println("사람이 한명이 생성됩니다. ");
+
+	 }
+	 
+	 public void setData(int data1, String data2, String data3) {
+		 
+		 age = data1;
+		 name = data2;
+	 }
 }
 	
 
