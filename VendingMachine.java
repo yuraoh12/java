@@ -4,6 +4,7 @@ public class VendingMachine {
 	
 	int remainder = 0;
 	Beverage[] beverages = new Beverage[10]; // 음료수 10개를 저장할 수 있는 공간 배열을 만듬. 
+	int count = 4;
 	
 	
 	//선언한다. 
@@ -20,18 +21,29 @@ public class VendingMachine {
 		Beverage b4 = new Beverage("생수", 600);
 		
 		
-		beverage[0] = b1;
-		beverage[1] = b2;
-		beverage[2] = b3;
-		beverage[3] = b4;
+		beverages[0] = b1;
+		beverages[1] = b2;
+		beverages[2] = b3;
+		beverages[3] = b4;
 	
 	}
 	
+	public void printBeverageList() {
+		System.out.println("=========음료수 목록============");
+		for(int i = 0; i < count; i ++) {
+			Beverage b = beverages[i];
+			System.out.printf("%d, %s : %d\n", i , b.name, b.price );
+			
+		}
+		System.out.println("=========음료수 목록============");
+
+	}	
+	
 	public void addBeverage(Beverage beverage) {
-		
-		
 		// 1. beverages 배열의 길이는 4이다. 마지막 인덱스가 3이다. 
-		beverage[4]= beverage;
+		beverages[count]= beverage;
+		count ++;
+		
 	}
 	
 	public String operate(int inputMoney, int bno) {
