@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 	public static void main(String[] args) {
 
-		public class Main {
+		
+		
 			//밖으로 빼준다. 스태틱 무조건 붙여준다. 
 			static ArrayList<String> titles = new ArrayList<>();
 			static ArrayList<String> bodies = new ArrayList<>();
@@ -29,7 +30,7 @@ import java.util.Scanner;
 						break;
 					} 
 
-					} else if(cmd.equals("add")) {
+					 else if(cmd.equals("add")) {
 						System.out.print("제목 :");
 						String title = sc.nextLine();
 						titles.add(title); // [aaa, ccc, eee]
@@ -53,7 +54,7 @@ import java.util.Scanner;
 					}else if(cmd.equals("update")){
 						
 						//CRUD
-					}
+					
 						System.out.print("수정할 게시물 번호 :");
 						int no = Integer.parseInt(sc.nextLine());
 						int index = no -1 ;
@@ -81,15 +82,18 @@ import java.util.Scanner;
 						System.out.println("알 수 없는 명령어입니다.");
 					}
 			}
-	}
-	public static void printArticles() {
-		// list 전체 출력
-		for(int i = 0; i < titles.size(); i++) {
-			String title = titles.get(i);
-			String body = bodies.get(i);
-			System.out.printf("번호: %d\n", i + 1);
-			System.out.printf("제목: %s\n", title);			
-			System.out.println("==========================");
 			}
-		}
-}
+	
+			public static void printArticles() {
+				// list 전체 출력
+				for(int i = 0; i < titles.size(); i++) {
+					String title = titles.get(i);
+					String body = bodies.get(i);
+					System.out.printf("번호: %d\n", i + 1);
+					System.out.printf("제목: %s\n", title);			
+					System.out.println("==========================");
+				}
+			}
+	
+	}
+	
