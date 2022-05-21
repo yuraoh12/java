@@ -1,10 +1,11 @@
-package aaaaa;
+package _pasted_code_;
 
 public class main {
-
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+		run board = new run();
+		board.run();
 
 	}
-
 }
