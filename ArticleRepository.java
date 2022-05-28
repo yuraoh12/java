@@ -1,11 +1,14 @@
-package practice2;
+package articlememberadd;
 
 import java.util.ArrayList;
 
 public class ArticleRepository {
 	
 	private ArrayList<Article> articles = new ArrayList<>();
-	private int articleId = 4;		
+	private ArrayList<Member> members = new ArrayList<>();
+	
+	private int articleId = 4;
+	private int memberId = 1;
 
 	public void makeTestData() {		
 		
@@ -59,6 +62,10 @@ public class ArticleRepository {
 		return this.articles;
 	}
 	
+	public ArrayList<Member> getMembers() {
+		return this.members;
+	}
+	
 	// U
 	public void updateArticle(Article article, String title, String body) {
 		article.setTitle(title);
@@ -72,6 +79,25 @@ public class ArticleRepository {
 
 	public void increaseReadCnt(Article article) {
 		article.setHit(article.getHit() + 1);
+	}
+
+	public void addMember(String loginId, String loginPw, String nickname) {		
+		Member member = new Member(loginId, loginPw, nickname);
+		members.add(member);
+		setMemberId(getMemberId() + 1);			
+	}
+
+	public void makeTestData1() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int getMemberId() {
+		return memberId;
+	}
+
+	public void setMemberId(int memberId) {
+		this.memberId = memberId;
 	}
 
 }

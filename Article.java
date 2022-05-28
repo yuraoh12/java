@@ -1,4 +1,4 @@
-package practice2;
+package articlememberadd;
 
 public class Article {
 

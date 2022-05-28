@@ -1,4 +1,5 @@
-package practice2;
+package articlememberadd;
+
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -14,6 +15,5 @@ public class Util {
 		return formatedNow;
 	
 	}
-	
 
 }
