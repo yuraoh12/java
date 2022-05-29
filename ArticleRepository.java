@@ -2,8 +2,18 @@ package articlememberadd;
 
 import java.util.ArrayList;
 
+public enum LoginFlag {
+	LOGIN_SUCCESS, // 0
+	NOT_EXIST_LOGIN_ID, // 1
+	NO_MATCH_PASS // 2
+}
+
 public class ArticleRepository {
+
 	
+	// final -> 변수를 상수화.
+	LoginFlag flag;
+		
 	private ArrayList<Article> articles = new ArrayList<>();
 	private ArrayList<Member> members = new ArrayList<>();
 	
@@ -12,6 +22,7 @@ public class ArticleRepository {
 
 	public void makeTestData() {		
 		
+				
 		Article a1 = new Article(1, "제목1", "내용1", "홍길동", Util.getCurrentDate(), 20);
 		Article a2 = new Article(2, "제목2", "내용2", "이순신", Util.getCurrentDate(), 10);
 		Article a3 = new Article(3, "제목3", "내용3", "황진이", Util.getCurrentDate(), 30);
@@ -87,9 +98,52 @@ public class ArticleRepository {
 		setMemberId(getMemberId() + 1);			
 	}
 
-	public void makeTestData1() {
-		// TODO Auto-generated method stub
+	
+	
+	public LoginFlag doLogin(String loginId, String loginPw) {		
 		
+		Member member = getMemberByLoginId(loginId);
+		
+		if(member == null) {
+			return LoginFlag.NOT_EXIST_LOGIN_ID;
+		}
+		
+		if(checkMemberPassword(member, loginPw)) {
+			return LoginFlag.LOGIN_SUCCESS;
+		}
+		
+		return LoginFlag.NO_MATCH_PASS;
+		
+	}
+	
+	public Member getMemberByLoginId(String loginId) {
+		for(int i = 0; i < members.size(); i++) {
+			Member member = members.get(i);
+			
+			if(member.getLoginId().equals(loginId)) {
+				return member;
+			}
+		}
+		
+		return null;
+	}
+	
+	public boolean checkMemberPassword(Member member, String inputPw) {
+		if(member.getLoginPw().equals(inputPw)) {
+			return true; 
+		}
+		
+		return false;
+	}
+
+	public LoginFlag doLogin11(String loginId, String loginPw) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public LoginFlag doLogin1(String loginId, String loginPw) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public int getMemberId() {
@@ -99,5 +153,4 @@ public class ArticleRepository {
 	public void setMemberId(int memberId) {
 		this.memberId = memberId;
 	}
-
 }

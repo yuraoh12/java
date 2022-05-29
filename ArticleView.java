@@ -88,4 +88,5 @@ public class ArticleView {
 			System.out.printf("%s , %s \n", members.get(i).getLoginId(), members.get(i).getNickname());
 		}
 	}
+	
 }
